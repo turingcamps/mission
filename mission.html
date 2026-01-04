@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+25&display=swap" rel="stylesheet">
+  <title>Turing Camps</title>
+  <link rel="icon" href="favicon.ico">
+  <style>
+    html{
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: "Jersey 25", sans-serif;
+      background-color: #ffecd1ff;
+    }
+    header {
+      padding: 1%;
+      background-color: #ffecd1ff;
+    }
+    .title {
+      margin-top:2%;
+      font-family: "Jersey 25", sans-serif;
+      font-size: 15vw;
+      text-align: center;
+      position: relative;
+    }
+    .title a{
+      color:#ff7d00;
+      text-decoration: none;
+    }
+    .textbox {
+      margin-bottom:4%;
+      margin-top: -13%;
+      font-family: "Jersey 10", sans-serif;
+      font-size: 6vw;
+      text-align: right;
+      margin-right: 28.5%; /* shift right to align 's' with 'g' visually */
+      color:#78290f
+    }
+    .subtitle{
+      color:#15616d;
+    }
+    .button-container {
+      display: flex;
+    }
+    .button-container a {
+      text-align: center;
+      text-decoration: none;
+      flex: 1;
+      font-family: "Jersey 10", sans-serif;
+      padding: 1.7%;
+      font-size: 3vw;
+      border: none;
+      background-color: #15616d;
+      color: #ffecd1ff;
+      cursor: pointer;
+      margin: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .button-container a:nth-child(1){
+      background-color: #78290f;
+    }
+
+    .button-container a:nth-child(3){
+      background-color: #001524ff;
+    }
+
+    .button-container a:nth-child(4){
+      background-color: #ff7d00;
+    }
+
+    .button-container a:hover {
+      transform: translateY(-7px);
+    }
+
+    .subheader{
+      margin-top: 5%;
+      font-family: "Jersey 10", sans-serif; 
+      font-size: 8vw;
+      text-align: center;
+      margin-bottom: 2.5%;
+      color: #78290f;
+    }
+
+    .numbers{
+        background-color: #15616d;
+        padding: 2vw 13vw;
+    }
+
+    .numbers-subtitle{
+        color:#ffecd1ff;
+        margin-top: 1vw;
+        margin-bottom: 2vw;
+    }
+
+    h3{
+        font-family: "Jersey 10", sans-serif; 
+        font-weight: normal;
+        font-size: 6vw;
+        margin: 0;
+        text-align: center;
+    }
+    .little-counter-container{
+        display: flex;
+        justify-content: space-evenly;
+        gap: 3vw;
+        background-color: #001524ff;
+        padding: 2vw;
+    }
+
+    .little-counter{
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .little-counter h3{
+        color:#ff7d00;
+        font-size: 8vw;
+    }
+
+    .little-counter p{
+        color:#ffecd1ff;
+        font-size: 4vw;
+        margin: 0 1vw;
+        padding-bottom: 1vw;
+    }
+
+    .big-counter{
+        background-color: #ff7d00;
+        text-align: center;
+        padding: 1vw;
+        padding-bottom: 3vw;
+    }
+    .big-counter h3{
+        font-size: 13vw;
+    }
+    .big-counter p{
+        margin: 0;
+        font-size: 5vw;
+        color:#15616d;
+        margin-top: -2.5vw;
+    }
+
+    .diapers{
+        margin-top: 3vw;
+        background-color: #001524ff;
+        padding: 3vw;
+    }
+
+    .diapers-subtitle{
+        color: #ff7d00;
+    }
+
+    .diapers-body{
+        display: flex;
+    }
+
+    .diapers img{
+        padding: 3vw;
+        width: 25%;
+        height: 25%;
+    }
+
+    .diapers p{
+        padding: 1.8vw;
+        margin: 0;
+        color: #ffecd1ff;
+        font-size: 2.5vw;
+        padding-bottom: 2vw;
+    }
+
+    .timeline{
+        margin-top: 3vw;
+        background-color: #78290f;
+        padding: 3vw;
+    }
+
+    .timeline-subtitle{
+        color: #ffecd1ff;
+        padding-bottom: 1vw;
+    }
+
+    .event{
+        padding: 2vw 5vw;
+        display: flex;
+        justify-content: space-between;
+        gap: 2vw;
+    }
+
+    .event-image{
+        width: 30%;
+        height: 30%;
+        padding: 1vw;
+    }
+
+    .event img{
+        width: 100%;
+        border:#ff7d00;
+        border-width: 0.5vw;
+        border-style: solid;
+    }
+
+    .event-text{
+        flex: 1;
+    }
+    .event p{
+        margin:0;
+        margin-top: 0.2vw;
+        font-size: 2vw;
+        color: #ffecd1ff;
+    }
+
+    .event h3{
+        text-align: left;
+        font-size: 4.5vw;
+        color: #ff7d00;
+    }
+    @media (max-width: 768px) {
+        .title {
+        font-size: 25vw;
+      }
+
+      .textbox {
+        margin-right: 0%;
+        margin-top: -22%;
+        font-size: 12vw;
+        text-align: center;
+      }
+
+      .button-container {
+        flex-direction: row;
+      }
+
+      .button-container a {
+        font-size: 6vw;
+        padding: 2vw;
+        padding-top: 3vw
+      }
+      .subheader{
+        font-size: 13vw;
+      }
+      h3{
+        font-size: 13vw;
+      }
+      .numbers{
+        padding: 5vw 2vw;
+      }
+      .little-counter-container h3{
+        font-size: 12vw;
+      }
+      .little-counter-container p{
+        font-size: 6vw;
+        padding-bottom: 2vw;
+      }
+      .big-counter h3{
+        font-size: 17vw;
+      }
+      .big-counter p{
+        font-size: 6vw;
+      }
+      .diapers{
+        padding: 5vw 2vw;
+      }
+      .diapers-body{
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+      .diapers-body p{
+        font-size: 6vw;
+        padding: 2vw 5vw;
+      }
+      .diapers-body img{
+        width: 40%;
+        height: 40%;
+      }
+      .timeline{
+        padding: 5vw 2vw;
+      }
+      .event{
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10vw;
+        gap: 2vw;
+      }
+      #flipped{
+        flex-direction: column-reverse;
+      }
+      .event-image{
+        width: 80%;
+        height: 80%;
+      }
+      .event-text h3{
+        text-align: center;
+        font-size: 10vw;
+        padding-bottom: 1vw;
+      }
+      .event-text p{
+        font-size: 6vw;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+    <header>
+        <h1 class="title"><a id="Home">TURING</a></h1>
+        <div class="textbox"><span id="typewriter"></span><span class="subtitle"> camps</span></div>
+        <div class="button-container">
+          <a id="MissionLink">Our Mission</a>
+          <a id="CoursesLink">Courses</a>
+          <a id="ContactLink">Contact Us</a>
+          <a href="https://www.gofundme.com/f/turingcamps-diaper-mission">DONATE!</a>
+        </div>
+    </header>
+    <div class="subheader">_Our Mission_</div>
+    <section class="numbers">
+        <h3 class="numbers-subtitle">By the Numbers</h3>
+        <div class="counter-container">
+            <div class="little-counter-container">
+                <div class="little-counter">
+                    <h3>30+</h3>
+                    <p>students</p>
+                </div>
+                <div class="little-counter">
+                    <h3>$600+</h3>
+                    <p>raised</p>
+                </div>
+            </div>
+            <div class="big-counter">
+                <h3>4,300+</h3>
+                <p>diapers donated</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="diapers">
+        <h3 class="diapers-subtitle">Why diapers?</h3>
+        <div class="diapers-body">
+            <img src=diaper.jpg>
+            <p>In the northern suburbs of Chicago, 1 in 4 families struggle to afford diapers – a basic necessity for infants and toddlers. Diapers can cost families up to $70-$80 per month per child and are not covered by assistance programs like SNAP or WIC. As a result, parents are often forced to choose between diapers, food, childcare, or other essentials. By providing diapers to families in need, TuringCamps helps support child health, parental stability, and the wellbeing of our local community.
+            </p>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <h3 class="timeline-subtitle">Our Journey</h3>
+        <div class="event">
+            <div class="event-image"><img src=library1.jpg></div>          
+            <div class="event-text">
+                <h3>First ever class!</h3>
+                <p>June 8th, 2025 <br> We held our first session, Python Bootcamp, at Aspen Drive Library! The 20+ students present had a blast playing around with Python for the first time and creating their very own password generator – much akin to ones used by Google and Apple. Overall, it was a success and a great learning experience for both the students and the TuringCamps team!</p>
+            </div>
+            
+        </div>
+        <div class="event" id="flipped">
+            <div class="event-text">
+                <h3>2025 Summer Session 1</h3>
+                <p>June 23rd-26th, 2025 <br> This summer session marked the first full courses taught for Python and Game Dev. Near the end, we explored cybersecurity through the lens of Python, a more advanced topic that was perfect for showing how the code taught could be applied professionally. In Game Dev, the students created an Oregon-Trail style game and with some additional time, we covered the basics of balancing games and science behind making games fun to play.</p>
+            </div>
+            <div class="event-image"><img src=codestock.jpg></div>
+        </div>
+        <div class="event">
+            <div class="event-image"><img src=2025s2.png></div>          
+            <div class="event-text">
+                <h3>2025 Summer Session 2</h3>
+                <p>July 21st-25th <br> The sweltering afternoons in mid-July were spent in the (thankfully AC’d) library exploring Python and Game Dev! Python had a packed class, which led to constant excitement and interactivity. We took a micro-project based learning approach, introducing fundamental topics through hands-on application. In Game Dev, we used Unity, a tool used by industry professionals, to create a finished game end-to-end! Students got their hands dirty with the C# language, complex level design, art, and polishing. Great way to end the 2025 season!</p>
+            </div>
+            
+        </div>
+        <div class="event" id="flipped">
+            <div class="event-text">
+                <h3>Buying Diapers!</h3>
+                <p>July 28th, 2025 <br> After a week of trips to Costco, lots of full shopping carts, and a bunch of counting we converted the $650 raised through the sessions into 4,342 diapers. To celebrate, I had a photoshoot with the diapers in my driveway!</p>
+            </div>
+            <div class="event-image"><img src=diaper1.jpg></div>
+        </div>
+        <div class="event">
+            <div class="event-image"><img src=sues1.jpg></div>          
+            <div class="event-text">
+                <h3>Donating to Sue's Pantry</h3>
+                <p>August 4th, 2025 <br> We donated 2,226 of the diapers to Sue’s Pantry – an awesome food pantry based in Vernon Hills run by Sue Gandhi. She told us about her journey, her mission, and how the diapers were going to be distributed. I was absolutely blown away by the scale and diversity of her one-woman operation run out of a garage.</p>
+            </div>
+            
+        </div>
+        <div class="event" id="flipped">
+            <div class="event-text">
+                <h3>Donating to St. Vincent's</h3>
+                <p>August 5th, 2025<br>The remaining half of the diapers went to St. Vincent de Paul’s Libertyville location. The large warehouse had many shelves of food, sanitary supplies, and furniture that I felt extremely proud to be adding to. The diapers, and other donated objects, were destined to reach families in need throughout the northern suburbs of Chicago, like Grayslake and Mundelein.</p>
+            </div>
+            <div class="event-image"><img src=stvincent.jpg></div>
+        </div>
+    </section>
+</body>
+<script>
+  const homeLink = "turing.html"
+  const words = ["summer|", "game dev|", "coding|", "robotics|", "python|",  "tech|"];
+  const typeSpeed = 150;
+  const deleteSpeed = 100;
+  const waitTime = 800;
+
+  let i = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const element = document.getElementById("typewriter");
+
+  document.getElementById("Home").href = homeLink;
+  document.getElementById("MissionLink").href = homeLink + "#mission";
+  document.getElementById("CoursesLink").href = homeLink + "#courses";
+  document.getElementById("ContactLink").href = homeLink + "#contact";
+  
+
+  function type() {
+    const currentWord = words[i % words.length];
+
+    if (isDeleting) {
+      charIndex--;
+      element.textContent = currentWord.substring(0, charIndex);
+    } else {
+      element.textContent = currentWord.substring(0, charIndex);
+      charIndex++;
+    }
+
+    let delay = isDeleting ? deleteSpeed : typeSpeed;
+
+    if (!isDeleting && charIndex === currentWord.length) {
+      delay = waitTime;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      i++;
+      delay = 500;
+    }
+
+    setTimeout(type, delay);
+  }
+
+  type();
+</script>
+
+</html>
